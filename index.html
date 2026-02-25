@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh Huynh | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #111827;
+      --accent: #2563eb;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.7;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .95);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .hero {
+      padding: 110px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--accent)
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .08)
+    }
+
+    .hero-card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .05);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .about {
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      transition: .3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .06);
+    }
+
+    .project img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .project-tech {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .contact {
+      color: var(--muted);
+    }
+
+    .contact p {
+      margin-bottom: 8px
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media(max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero h1 {
+        font-size: 40px
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: white;
+        width: 200px;
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+        border-left: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
+        transform: translateX(100%);
+        transition: transform .3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+      }
+
+      .nav-links.show {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Minh Huynh</div>
+
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Xin chào, mình là <span>Minh Huynh</span></h1>
+        <p>
+          Mình là Fullstack Web Developer chuyên xây dựng web app hiện đại,
+          tối ưu hiệu năng và trải nghiệm người dùng.
+        </p>
+        <a href="#projects" class="btn">Xem dự án</a>
+      </div>
+
+      <div class="hero-card">
+        <p><b>Vai trò:</b> Fullstack Developer</p>
+        <p><b>Kinh nghiệm:</b> 2+ năm</p>
+        <p><b>Stack:</b> React • Node.js • MongoDB</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Giới thiệu</h2>
+      <p class="about">
+        Tôi tập trung xây dựng các sản phẩm web có khả năng mở rộng,
+        kiến trúc rõ ràng và trải nghiệm người dùng tốt.
+        Tôi yêu thích việc giải quyết vấn đề và tối ưu hệ thống.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Kỹ năng</h2>
+      <div class="skills">
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">REST API</div>
+        <div class="skill">Git</div>
+        <div class="skill">Docker</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Dự án</h2>
+
+      <div class="projects">
+
+        <div class="project">
+          <img src="https://picsum.photos/600/400?1">
+          <div class="project-body">
+            <div class="project-title">Website đặt vé phim</div>
+            <div class="project-tech">React • Node • MongoDB</div>
+            <div class="project-desc">
+              Hệ thống đặt vé với chọn ghế realtime và quản lý booking.
+            </div>
+            <a href="./projects/movie-booking.html">Xem chi tiết →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="https://picsum.photos/600/400?2">
+          <div class="project-body">
+            <div class="project-title">Ecommerce linh kiện</div>
+            <div class="project-tech">MERN Stack</div>
+            <div class="project-desc">
+              Website bán hàng với quản lý đơn hàng và dashboard admin.
+            </div>
+            <a href="./projects/electronic.html">Xem chi tiết →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="https://picsum.photos/600/400?3">
+          <div class="project-body">
+            <div class="project-title">Portfolio cá nhân</div>
+            <div class="project-tech">HTML • CSS • JS</div>
+            <div class="project-desc">
+              Trang web giới thiệu bản thân và dự án cá nhân.
+            </div>
+            <a href="#">Xem chi tiết →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Liên hệ</h2>
+      <div class="contact">
+        <p>Email: huynhtruong260345@gmail.com</p>
+        <p>GitHub: TMHuinh</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Minh Huynh — Portfolio
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+
+</html>

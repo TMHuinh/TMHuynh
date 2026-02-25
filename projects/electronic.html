@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Linh kiện</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --bg: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+        }
+
+        .back {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 18px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #eef2ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .side-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .side-box p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .links a {
+            display: block;
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 10px;
+            transition: .2s;
+        }
+
+        .links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        @media(max-width:900px) {
+            .info-grid {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: static
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a class="back" href="../index.html">← Quay lại Portfolio</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="title">Ecommerce Linh kiện Điện tử</div>
+        <div class="meta">2025 • Fullstack Developer</div>
+
+        <img class="hero-img" src="https://picsum.photos/1000/500?2" alt="preview">
+
+        <div class="info-grid">
+
+            <div>
+
+                <div class="card">
+                    <h2>Mô tả dự án</h2>
+                    <p>
+                        Website thương mại điện tử bán linh kiện điện tử với giao diện hiện đại,
+                        dễ dàng tìm kiếm sản phẩm, quản lý giỏ hàng, thanh toán trực tuyến
+                        và dashboard admin để quản lý đơn hàng.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Nhiệm vụ của tôi</h2>
+                    <ul>
+                        <li>Thiết kế UI/UX responsive</li>
+                        <li>Triển khai backend với Node.js và MongoDB</li>
+                        <li>Quản lý sản phẩm, đơn hàng và thanh toán online</li>
+                        <li>Tối ưu tốc độ load và hiệu năng</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Công nghệ sử dụng</h2>
+                    <div class="tags">
+                        <div class="tag">React</div>
+                        <div class="tag">Node.js</div>
+                        <div class="tag">MongoDB</div>
+                        <div class="tag">Express</div>
+                        <div class="tag">REST API</div>
+                        <div class="tag">CSS</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Kết quả đạt được</h2>
+                    <ul>
+                        <li>Ứng dụng hoạt động mượt trên desktop và mobile</li>
+                        <li>Admin dashboard quản lý đơn hàng trực quan</li>
+                        <li>Tăng trải nghiệm mua sắm và tỷ lệ checkout thành công</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="side-box">
+                    <p><b>Vai trò:</b> Fullstack Developer</p>
+                    <p><b>Thời gian:</b> 2025</p>
+                    <p><b>Team:</b> 4 người</p>
+
+                    <div class="links">
+                        <a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

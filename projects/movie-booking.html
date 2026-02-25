@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --bg: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+        }
+
+        .back {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 18px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #eef2ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .side-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .side-box p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .links a {
+            display: block;
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 10px;
+            transition: .2s;
+        }
+
+        .links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        @media(max-width:900px) {
+            .info-grid {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: static
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a class="back" href="../index.html">← Quay lại Portfolio</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="title">Website đặt vé phim</div>
+        <div class="meta">2024 • Frontend Developer</div>
+
+        <img class="hero-img" src="https://picsum.photos/1000/500" alt="preview">
+
+        <div class="info-grid">
+
+            <div>
+
+                <div class="card">
+                    <h2>Mô tả dự án</h2>
+                    <p>
+                        Hệ thống đặt vé phim trực tuyến cho phép người dùng lựa chọn ghế theo thời gian thực,
+                        đặt vé và quản lý lịch sử giao dịch. Ứng dụng tập trung vào trải nghiệm người dùng
+                        và hiệu năng khi xử lý nhiều người truy cập cùng lúc.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Nhiệm vụ của tôi</h2>
+                    <ul>
+                        <li>Thiết kế giao diện responsive</li>
+                        <li>Tích hợp API backend</li>
+                        <li>Quản lý state và logic đặt ghế</li>
+                        <li>Tối ưu hiệu năng render</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Công nghệ sử dụng</h2>
+                    <div class="tags">
+                        <div class="tag">React</div>
+                        <div class="tag">REST API</div>
+                        <div class="tag">CSS</div>
+                        <div class="tag">Redux</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Kết quả đạt được</h2>
+                    <ul>
+                        <li>Ứng dụng hoạt động mượt trên mobile và desktop</li>
+                        <li>Cải thiện thời gian tải trang</li>
+                        <li>UX trực quan giúp tăng tỉ lệ đặt vé</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="side-box">
+                    <p><b>Vai trò:</b> Frontend Developer</p>
+                    <p><b>Thời gian:</b> 2024</p>
+                    <p><b>Team:</b> 3 người</p>
+
+                    <div class="links">
+                        <a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
