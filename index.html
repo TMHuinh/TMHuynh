@@ -28,6 +28,7 @@
       background: var(--bg);
       color: var(--primary);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     html {
@@ -242,6 +243,10 @@
         font-size: 40px
       }
 
+      .nav-inner {
+        padding: 18px 20px;
+      }
+
       .hamburger {
         display: flex
       }
@@ -257,14 +262,22 @@
         gap: 15px;
         border-left: 1px solid #e5e7eb;
         border-bottom: 1px solid #e5e7eb;
-        transform: translateX(100%);
-        transition: transform .3s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+
+
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
       }
 
       .nav-links.show {
         transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
       }
+
 
       .nav-links a {
         margin: 0;
@@ -400,13 +413,26 @@
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    navLinks.classList.toggle('show');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      navLinks.classList.remove('show');
+    }
+  });
+
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
     });
-  </script>
+  });
+</script>
 
 </body>
 
